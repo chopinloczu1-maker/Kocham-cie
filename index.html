@@ -1,171 +1,149 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gra dla ukochanej osoby 💖</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dla Ciebie 💖</title>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffd6e8, #ff9eb5, #ffccd5);
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 32px 40px;
-      border-radius: 24px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
-      max-width: 600px;
-      width: 90%;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 24px;
-    }
-
-    p.subtitle {
-      margin-top: 0;
-      margin-bottom: 24px;
-      font-size: 15px;
-      opacity: 0.8;
-    }
-
-    .keys {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    .key {
-      width: 70px;
-      height: 70px;
-      border-radius: 16px;
-      border: 2px solid #ff6b9d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      background: #ffe6f0;
-      box-shadow: 0 4px 0 #ff6b9d;
-      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.2s ease;
-      cursor: pointer;
-      user-select: none;
-      touch-action: manipulation;
-    }
-
-    .key:active,
-    .key.active {
-      transform: translateY(3px);
-      box-shadow: 0 1px 0 #ff6b9d;
-      background: #ffd0e4;
-    }
-
-    .message {
-      min-height: 80px;
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .message.pop {
-      animation: pop 0.35s ease-out;
-    }
-
-    @keyframes pop {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      60% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .hint {
-      margin-top: 16px;
-      font-size: 13px;
-      opacity: 0.7;
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at top,#fff1c1,#ffb703,#d4af37);
+}
+.container{
+  background:rgba(255,255,255,.95);
+  padding:30px;
+  border-radius:24px;
+  box-shadow:0 18px 40px rgba(0,0,0,.2);
+  max-width:650px;
+  width:90%;
+  text-align:center;
+}
+h1{margin:0 0 10px;font-size:26px}
+.subtitle{opacity:.8;margin-bottom:20px}
+.tabs{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-bottom:20px;
+}
+.tab{
+  padding:10px 16px;
+  border-radius:14px;
+  border:2px solid #d4af37;
+  background:#fff8dc;
+  cursor:pointer;
+  font-weight:600;
+}
+.tab.active{background:#ffdd73}
+.keys{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.key{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  border:2px solid #d4af37;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  background:#fff3c4;
+  cursor:pointer;
+  user-select:none;
+  transition:.1s;
+}
+.key:active{transform:scale(.95)}
+.message{
+  min-height:90px;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.4;
+}
+.message.pop{animation:pop .35s ease-out}
+@keyframes pop{
+  0%{transform:scale(.8);opacity:0}
+  60%{transform:scale(1.05);opacity:1}
+  100%{transform:scale(1)}
+}
+.back{
+  margin-top:10px;
+  font-size:14px;
+  opacity:.7;
+  cursor:pointer;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Gra dla Ciebie 💘</h1>
-    <p class="subtitle">Klikaj w serduszka, żeby zobaczyć, jak bardzo jesteś ważna 💖</p>
+<div class="container">
+<h1>💖 Dla Ciebie 💖</h1>
+<p class="subtitle">Klikaj i czytaj to, co czuję</p>
 
-    <div class="keys">
-      <div class="key" data-id="h1">💖</div>
-      <div class="key" data-id="h2">💕</div>
-      <div class="key" data-id="h3">💘</div>
-      <div class="key" data-id="h4">💝</div>
-    </div>
+<div class="tabs">
+  <div class="tab active" data-tab="love">💖 Miłość</div>
+  <div class="tab" data-tab="newyear">🎆 Nowy Rok</div>
+</div>
 
-    <div id="message" class="message">
-      Kliknij w któreś serduszko, kochanie 💗
-    </div>
-
-    <p class="hint">Możesz klikać bez końca 😌</p>
+<div id="love" class="section">
+  <div class="keys">
+    <div class="key" data-msg="Kocham Cię 💖">💖</div>
+    <div class="key" data-msg="Jesteś najlepsza 💫">💕</div>
+    <div class="key" data-msg="Będziemy razem do końca życia 💍">💘</div>
+    <div class="key" data-msg="Cieszę się, że Ciebie mam 🥹">💝</div>
   </div>
+</div>
 
-  <script>
-    // Teksty przypisane do serduszek
-    const messages = {
-      h1: "Kocham Cię 💖",
-      h2: "Jesteś najlepsza 💫",
-      h3: "Będziemy razem do końca życia 💍",
-      h4: "Cieszę się, że Ciebie mam 🥹"
-    };
+<div id="newyear" class="section" style="display:none">
+  <div class="keys">
+    <div class="key" data-msg="🎆 Szczęśliwego Nowego Roku, Skarbie! 🎆">🎆</div>
+    <div class="key" data-msg="🏠 Żeby nam się udało zamieszkać razem 🏠">🏡</div>
+    <div class="key" data-msg="💬 Żebyśmy mieli jak najmniej kłótni i zawsze się dogadywali 💬">💞</div>
+    <div class="key" data-msg="❤️ I żebyś już nigdy nie chciała innego ❤️">❤️</div>
+  </div>
+  <div class="back" onclick="switchTab('love')">← wróć do Miłości</div>
+</div>
 
-    const messageBox = document.getElementById("message");
-    const keyElements = document.querySelectorAll(".key");
+<div id="message" class="message">
+Kliknij serduszko lub fajerwerk 🎇
+</div>
+</div>
 
-    function setActiveKey(clickedEl) {
-      keyElements.forEach(k => k.classList.remove("active"));
-      clickedEl.classList.add("active");
-      // automatycznie po chwili zdejmujemy "wciśnięcie"
-      setTimeout(() => clickedEl.classList.remove("active"), 150);
-    }
+<script>
+const messageBox=document.getElementById("message");
+const keys=document.querySelectorAll(".key");
+const tabs=document.querySelectorAll(".tab");
+const sections=document.querySelectorAll(".section");
 
-    function showMessage(text) {
-      messageBox.classList.remove("pop");
-      void messageBox.offsetWidth; // reset animacji
-      messageBox.textContent = text;
-      messageBox.classList.add("pop");
-    }
+function showMessage(text){
+  messageBox.classList.remove("pop");
+  void messageBox.offsetWidth;
+  messageBox.textContent=text;
+  messageBox.classList.add("pop");
+}
 
-    // Funkcja obsługująca zarówno klik, jak i dotyk
-    function handlePress(el, event) {
-      event.preventDefault();
-      const id = el.getAttribute("data-id");
-      const text = messages[id];
-      if (text) {
-        setActiveKey(el);
-        showMessage(text);
-      }
-    }
+keys.forEach(k=>{
+  k.addEventListener("click",()=>showMessage(k.dataset.msg));
+});
 
-    keyElements.forEach(el => {
-      el.addEventListener("click", (e) => handlePress(el, e));
-      el.addEventListener("touchstart", (e) => handlePress(el, e), { passive: false });
-    });
-  </script>
+tabs.forEach(t=>{
+  t.addEventListener("click",()=>switchTab(t.dataset.tab));
+});
+
+function switchTab(name){
+  tabs.forEach(t=>t.classList.toggle("active",t.dataset.tab===name));
+  sections.forEach(s=>s.style.display=s.id===name?"block":"none");
+}
+</script>
 </body>
 </html>
